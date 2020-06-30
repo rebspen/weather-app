@@ -1,0 +1,15 @@
+.toggle{
+  width:25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1em;
+  outline: none;
+}
+
