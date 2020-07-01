@@ -11,7 +11,6 @@ const Location = () => {
 
   const updateLocation = async (country) => {
     const response = await changeCity(country);
-    console.log("here", response)
     dispatch({type:"NEW_LOCATION", payload: response});
   }
 
@@ -23,6 +22,7 @@ const Location = () => {
         <option value="paris">Paris</option>
         <option value="sydney">Sydney</option>
         <option value="belfast">Belfast</option>
+        <option value="new york">New York</option>
       </select>
     </div>
   );

@@ -13,3 +13,6 @@ button{
   outline: none;
 }
 
+.switch{
+  align-self: center;
+}

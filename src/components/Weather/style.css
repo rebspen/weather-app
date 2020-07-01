@@ -3,7 +3,7 @@ span{
 }
 
 .column{
-  margin-top: 1em;
+  margin-top: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;

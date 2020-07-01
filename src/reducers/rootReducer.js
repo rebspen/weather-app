@@ -5,7 +5,7 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "NEW_LOCATION":
-      const celsius = Math.round(action.payload.main.temp - 273.15);
+      const celsius = Math.round(action.payload.main.temp);
       const fahrenheit = Math.round(celsius * (9 / 5) + 32);
       const unixConvert = (unix) => {
         const date = new Date(unix * 1000);
@@ -19,16 +19,10 @@ function rootReducer(state = initialState, action) {
         inCelsius: true,
         country: action.payload.name,
         icon: action.payload.weather[0].icon,
-        sunrise: unixConvert(action.payload.sys.sunrise),
-        sunset: unixConvert(action.payload.sys.sunset),
+        sunrise: unixConvert((action.payload.sys.sunrise + action.payload.timezone)),
+        sunset: unixConvert((action.payload.sys.sunset + action.payload.timezone)),
         fahrenheit,
         celsius,
-      };
-      break;
-    case "SWITCH":
-      return {
-        ...state,
-        inCelsius: action.payload,
       };
       break;
     case "C_TO_F":
