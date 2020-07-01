@@ -8,8 +8,6 @@ const Toggle = () => {
   const [checkedState, setChecked] = useState(degree);
   const dispatch = useDispatch();
 
-  console.log("2", checkedState)
-
   const handleChange = (checked) => {
     setChecked(checked);
     return checked
@@ -20,7 +18,7 @@ const Toggle = () => {
 
   return (
     <div className="toggle">
-      <button>°C</button>
+      <button>°C.</button>
       <Switch
         offHandleColor="#eb6c4c"
         onHandleColor="#eb6c4c"
