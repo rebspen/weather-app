@@ -4,8 +4,11 @@ import Switch from "react-switch";
 import "./style.css";
 
 const Toggle = () => {
-  const [checkedState, setChecked] = useState(false);
+  const degree = useSelector(state => state.inF)
+  const [checkedState, setChecked] = useState(degree);
   const dispatch = useDispatch();
+
+  console.log("2", checkedState)
 
   const handleChange = (checked) => {
     setChecked(checked);
@@ -13,6 +16,7 @@ const Toggle = () => {
       ? dispatch({ type: "C_TO_F" })
       : dispatch({ type: "F_TO_C" });
   };
+
 
   return (
     <div className="toggle">

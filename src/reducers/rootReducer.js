@@ -1,5 +1,6 @@
 const initialState = {
   country: "Lisbon",
+  inF: false
 };
 
 function rootReducer(state = initialState, action) {
@@ -16,7 +17,7 @@ function rootReducer(state = initialState, action) {
         return mins === 0 ? hour + ":00" : hour + ":" + mins;
       };
       return {
-        inCelsius: true,
+        ...state,
         country: action.payload.name,
         icon: action.payload.weather[0].icon,
         sunrise: unixConvert((action.payload.sys.sunrise + action.payload.timezone)),
@@ -28,13 +29,13 @@ function rootReducer(state = initialState, action) {
     case "C_TO_F":
       return {
         ...state,
-        inCelsius: false,
+        inF: true,
       };
       break;
     case "F_TO_C":
       return {
         ...state,
-        inCelsius: true,
+        inF: false,
       };
       break;
     default:
