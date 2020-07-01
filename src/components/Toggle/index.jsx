@@ -8,8 +8,6 @@ const Toggle = () => {
   const [checkedState, setChecked] = useState(degree);
   const dispatch = useDispatch();
 
-  console.log("2", checkedState)
-
   const handleChange = (checked) => {
     setChecked(checked);
     return checked
